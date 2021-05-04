@@ -1,0 +1,46 @@
+{
+  "name": "@<%= github %>/<%= name %>",
+  "version": "<%= version %>",
+  "private": true,
+  "description": "<%= description %>",
+  "keywords": [
+    "<%= name %>",
+    "<%= github %>",
+    "caz",
+    "zce"
+  ],
+  "repository": "<%= github %>/<%= name %>",
+  "license": "MIT",
+  "author": "<%= author %> <<%= email %>> (<%= url %>)",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix<%= features.includes('test') ? ' && jest' : '' %>"
+  },<% if (features.includes('test')) { %>
+  "jest": {
+    "testTimeout": 20000,
+    "modulePathIgnorePatterns": [
+      "<rootDir>/template"
+    ]
+  },<% } %>
+  "renovate": {
+    "extends": [
+      "zce"
+    ],
+    "ignorePaths": [
+      "template"
+    ]
+  },
+  "standard": {<% if (features.includes('test')) { %>
+    "env": [
+      "jest"
+    ],<% } %>
+    "ignore": [
+      "<%= source %>"
+    ]
+  },
+  "devDependencies": {<% if (features.includes('test')) { %>
+    "caz": "0.6.0",
+    "jest": "26.6.3",<% } %>
+    "standard": "16.0.3"
+  }
+}
