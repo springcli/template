@@ -1,0 +1,50 @@
+{
+  "name": "@springcli/template",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A template for creating springcli templates.",
+  "keywords": [
+    "template",
+    "springcli-templates",
+    "springci"
+  ],
+  "repository": "springcli/template",
+  "license": "MIT",
+  "author": "wannaspring",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix && jest"
+  },
+  "jest": {
+    "testTimeout": 20000,
+    "modulePathIgnorePatterns": [
+      "<rootDir>/template"
+    ]
+  },
+  "renovate": {
+    "extends": [
+      "wannaspring"
+    ],
+    "ignorePaths": [
+      "template"
+    ]
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": [
+      "template"
+    ]
+  },
+  "dependencies": {
+    "springci": "0.1.2",
+    "jest": "26.6.3",
+    "standard": "16.0.3"
+  },
+  "devDependencies": {
+    "springci": "0.1.2",
+    "jest": "26.6.3",
+    "standard": "16.0.3"
+  }
+}

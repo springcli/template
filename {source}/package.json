@@ -1,0 +1,20 @@
+{
+  "name": "<%= '\<%= name %\>' %>"<% if (features.includes('prompts')) { %>,
+  "version": "<%= '\<%= version %\>' %>",
+  "description": "<%= '\<%= description %\>' %>",
+  "keywords": [
+    "<%= '\<%= name %\>' %>",
+    "wannaspring"
+  ],
+  "repository": "<%= '\<%= github %\>' %>/<%= '\<%= name %\>' %>",
+  "license": "<%= '\<%= license %\>' %>",
+  "author": "<%= '\<%= author %\>' %> <<%= '\<%= email %\>' %>> (<%= '\<%= url %\>' %>)",
+  "scripts": {},
+  "renovate": {
+    "extends": [
+      "wannaspring"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {}<% } %>
+}
