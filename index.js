@@ -76,12 +76,11 @@ module.exports = {
         { title: 'Custom emit hook', value: 'emit' },
         { title: 'Custom complete', value: 'complete', selected: true },
         { title: 'Additional docs', value: 'docs' },
-        { title: 'Automatic test', value: 'test', selected: true }
       ]
     },
     {
       name: 'complete',
-      type: prev => process.env.NODE_ENV === 'test' || prev.includes('complete') ? 'select' : null,
+      type: prev => prev.includes('complete') ? 'select' : null,
       message: 'Complete type',
       hint: ' ',
       choices: [
@@ -97,7 +96,7 @@ module.exports = {
     },
     {
       name: 'pm',
-      type: prev => process.env.NODE_ENV === 'test' || prev ? 'select' : null,
+      type: prev =>  prev ? 'select' : null,
       message: 'Package manager',
       hint: ' ',
       choices: [
@@ -110,8 +109,6 @@ module.exports = {
   filters: {
     /** @param {{ features: string[] }} answers */
     'docs/**': answers => answers.features.includes('docs'),
-    /** @param {{ features: string[] }} answers */
-    'test/**': answers => answers.features.includes('test'),
     /** @param {{ features: string[] }} answers */
     '.travis.yml': answers => answers.features.includes('test')
   },
@@ -129,7 +126,6 @@ module.exports = {
     if (ctx.config.install === false) {
       console.log(chalk`  $ {cyan npm install} {gray # or yarn}`)
     }
-    console.log(chalk`  $ {cyan ${ctx.config.install ? ctx.config.install : 'npm'} test}`)
     console.log('\nHappy hacking :)\n')
   }
 }
