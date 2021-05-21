@@ -1,1 +1,0 @@
-# @springcli/template

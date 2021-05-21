@@ -1,5 +1,0 @@
-.DS_Store<% if (features.includes('test')) { %>
-dist<% } %>
-node_modules
-package-lock.json
-yarn.lock
