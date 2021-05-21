@@ -4,17 +4,11 @@
   "description": "<%= '\<%= description %\>' %>",
   "keywords": [
     "<%= '\<%= name %\>' %>",
-    "zce"
   ],
   "repository": "<%= '\<%= github %\>' %>/<%= '\<%= name %\>' %>",
   "license": "<%= '\<%= license %\>' %>",
   "author": "<%= '\<%= author %\>' %> <<%= '\<%= email %\>' %>> (<%= '\<%= url %\>' %>)",
   "scripts": {},
-  "renovate": {
-    "extends": [
-      "zce"
-    ]
-  },
   "dependencies": {},
   "devDependencies": {}<% } %>
 }

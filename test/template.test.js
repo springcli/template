@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const { default: caz, inject } = require('caz')
+const { default: springci, inject } = require('springci')
 
 const template = path.join(__dirname, '..')
 const temp = path.join(__dirname, '..', 'dist')
@@ -20,10 +20,6 @@ test('minimal', async () => {
     'minimal',
     '0.1.0',
     'minimal template',
-    'zce',
-    'w@zce.me',
-    'https://zce.me',
-    'zce',
     'template',
     [],
     'message',
@@ -33,7 +29,7 @@ test('minimal', async () => {
 
   const project = path.join(temp, 'minimal')
 
-  await caz(template, project, { force: true })
+  await springci(template, project, { force: true })
 
   expect(fs.existsSync(project)).toBe(true)
   expect(fs.existsSync(path.join(project, 'template'))).toBe(true)
@@ -48,10 +44,6 @@ test('maximal', async () => {
     'maximal',
     '0.1.0',
     'maximal template',
-    'zce',
-    'w@zce.me',
-    'https://zce.me',
-    'zce',
     'source',
     [
       'metadata',
@@ -74,7 +66,7 @@ test('maximal', async () => {
 
   const project = path.join(temp, 'maximal')
 
-  await caz(template, project, { force: true })
+  await springci(template, project, { force: true })
 
   expect(fs.existsSync(project)).toBe(true)
   expect(fs.existsSync(path.join(project, 'source'))).toBe(true)

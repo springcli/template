@@ -1,13 +1,13 @@
 // @ts-check
 
-// !!! Sharing the dependencies of caz
+// !!! Sharing the dependencies of springci
 module.paths = require.main.paths
 
 const path = require('path')
 const chalk = require('chalk')
 const { name, version } = require('./package.json')
 
-/** @type {import('caz').Template} */
+/** @type {import('springci').Template} */
 module.exports = {
   name,
   version<% if (source !== 'template') { %>,
@@ -53,7 +53,7 @@ module.exports = {
       name: 'github',
       type: 'text',
       message: 'GitHub username or organization',
-      initial: 'zce'
+      initial: 'wanaSpring'
     },
     {
       name: 'features',
