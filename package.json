@@ -5,7 +5,7 @@
   "description": "A template for creating springci templates.",
   "keywords": [
     "template",
-    "springcli",
+    "springcli"
   ],
   "repository": "springcli/template",
   "license": "MIT",
